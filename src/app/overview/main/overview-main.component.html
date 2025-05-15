@@ -1,0 +1,29 @@
+<div class="main-container">
+    <!-- Left Side: A-Z Filter Checkboxes -->
+    <div class="filter-container">
+      <h2>Filter nach Anfangsbuchstabe</h2>
+      
+      <!-- A-Z Filter Checkboxes -->
+      <ul id="alphabet-filters">
+        @for (letter of alphabet; track letter) {
+          <li>
+            <input type="checkbox" 
+                   id="filter-{{letter}}" 
+                   (change)="onFilterChange(letter)" 
+                   [checked]="selectedLetters.includes(letter)" />
+            <label for="filter-{{letter}}">{{ letter }}</label>
+          </li>
+        }
+      </ul>
+    </div>
+  
+    <!-- Right Side: Platz für Charaktere (noch nicht implementiert) -->
+    <div class="characters-container">
+      <h2>Charaktere</h2>
+      <!-- Hier könnte später die Liste der Charaktere eingefügt werden -->
+       @for (character of selectedCharacters; track character){         
+            <Button (click)="onCharacterClick(character)">{{character.name}}</Button>
+          }     
+    </div>
+  </div>
+  
