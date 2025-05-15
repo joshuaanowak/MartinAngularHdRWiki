@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Character } from '../../character.model';
 import { ApiService } from '../../api.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-overview-main',
@@ -14,7 +15,7 @@ export class OverviewMainComponent {
   characters: Character[] = [];
   selectedCharacters: Character[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
   
   ngOnInit(): void {
     this.apiService.getCharacters().subscribe(response => {
@@ -28,13 +29,14 @@ export class OverviewMainComponent {
   // Diese Methode wird aufgerufen, wenn ein Filter (Checkbox) geändert wird
   onFilterChange(letter: string) {
     this.selectedLetters = [letter];
-    // Hier könnte später eine Filterung der Charaktere erfolgen
     console.log('Aktuelle ausgewählte Buchstaben:', this.selectedLetters);
+    console.log(this.selectedCharacters);
     this.getSelectedCharacters();
   }
 
   onCharacterClick(character:any):void{
     console.log('Clicked character:', character);
+    this.router.navigate(['/character'], { state: { character } });
   }
 
   getSelectedCharacters(){
