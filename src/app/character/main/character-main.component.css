@@ -1,0 +1,32 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #c8a400;
+  color: #1b3d26;;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+
+button{
+   background-color:  #1b3d26;
+   color: #fff;
+}
+
+button:hover {
+    background-color: #c8a400; /* Neue Hintergrundfarbe */
+    color: #fff; /* Neue Textfarbe */
+    cursor: pointer; /* Zeigt einen Zeiger-Cursor an */
+  }

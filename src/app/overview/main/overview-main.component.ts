@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { Character } from '../../character.model';
 import { ApiService } from '../../api.service';
 import { Router, RouterModule } from '@angular/router';
+import { CharacterMainComponent } from "../../character/main/character-main.component";
+import { SearchComponent } from '../../search/search/search.component';
 
 @Component({
   selector: 'app-overview-main',
-  imports: [],
+  imports: [CharacterMainComponent,SearchComponent],
   templateUrl: './overview-main.component.html',
   styleUrl: './overview-main.component.css'
 })
@@ -14,6 +16,7 @@ export class OverviewMainComponent {
   selectedLetters: string[] = [];
   characters: Character[] = [];
   selectedCharacters: Character[] = [];
+  selectedCharacter: Character | null = null;
 
   constructor(private apiService: ApiService, private router: Router) {}
   
@@ -26,6 +29,24 @@ export class OverviewMainComponent {
     console.log(this.characters);
   }
 
+  showSearchPopup = false;
+
+  openSearchPopup() {
+    this.showSearchPopup = true;
+  }
+
+  closeSearchPopup() {
+    this.showSearchPopup = false;
+  }
+
+  onCharacterFromSearchSelected(char: Character) {
+    this.selectedCharacter = char;
+  }
+
+  closePopup() {
+    this.selectedCharacter = null;
+  }
+
   // Diese Methode wird aufgerufen, wenn ein Filter (Checkbox) geändert wird
   onFilterChange(letter: string) {
     this.selectedLetters = [letter];
@@ -36,7 +57,7 @@ export class OverviewMainComponent {
 
   onCharacterClick(character:any):void{
     console.log('Clicked character:', character);
-    this.router.navigate(['/character'], { state: { character } });
+    this.selectedCharacter = character;
   }
 
   getSelectedCharacters(){

@@ -1,79 +1,34 @@
-/* header.component.css */
-
-/* Allgemeiner Header-Stil */
-/* Reset margin/padding for the body and html elements */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+.header {
+  background-color: #1b3d26; /* dunkles Grün */
+  color: #c8a400;            /* goldgelb */
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(27, 61, 38, 0.8);
+  user-select: none;
+  font-family: 'Uncial Antiqua', serif;
 }
 
-.header {
-    background-color: #2e2a47;
-    text-align: center;
-    padding: 30px;
-    border-bottom: 5px solid #9e7b3d;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Ensures full width */
-    box-sizing: border-box; /* Makes sure padding doesn’t add extra width */
-  }
-  
-  /* Große Überschrift im HdR-Stil */
-  .header-title {
-    font-size: 3rem;
-    font-family: 'Cinzel', serif; /* Eine serifenbetonte, mittelalterliche Schriftart */
-    color: #d4af37; /* Gold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Schöner Schlagschatten für einen epischen Look */
-    margin-bottom: 15px;
-  }
-  
-  /* Bereich für den Text und die Schaltflächen */
-  .search-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-  }
-  
-  /* Text "Charaktere heraus suchen" */
-  .search-text {
-    font-size: 1.5rem;
-    font-family: 'Garamond', serif; /* Elegante, klassische Schriftart */
-    color: #d4af37; /* Gold */
-    margin-right: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Leichter Schlagschatten für besseren Kontrast */
-  }
-  
-  /* Pfeil-Icon */
-  .arrow {
-    font-size: 2rem;
-    color: #d4af37; /* Gold */
-    margin: 0 15px;
-    cursor: pointer;
-  }
-  
-  /* Button-Stil im mittelalterlichen Look */
-  .search-button {
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    background-color: #3e4a42; /* Dunkles Grün */
-    color: white;
-    border: 2px solid #d4af37; /* Goldener Rand */
-    border-radius: 8px;
-    font-family: 'Cinzel', serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover-Effekt für den Button */
-  .search-button:hover {
-    background-color: #9e7b3d; /* Gold */
-    color: #2e2a47; /* Dunkles Violett für Kontrast */
-    border: 2px solid #2e2a47; /* Dunkelvioletter Rand beim Hover */
-  }
-  
-  /* Schöner Übergang für die Schaltflächen */
-  .search-button:focus {
-    outline: none; /* Entfernt den Standard-Rand bei Fokussierung */
-  }
-  
+.header-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.search-section {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: default;
+  color: #e6d969;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #c8a400;
+  user-select: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}

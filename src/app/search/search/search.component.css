@@ -1,0 +1,52 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #c8a400;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+button{
+   background-color:  #1b3d26;
+   color: #fff;
+}
+
+button:hover {
+    background-color: #c8a400; /* Neue Hintergrundfarbe */
+    color: #fff; /* Neue Textfarbe */
+    cursor: pointer; /* Zeigt einen Zeiger-Cursor an */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+li {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+li:hover {
+  background-color: #dcdcdc;
+}

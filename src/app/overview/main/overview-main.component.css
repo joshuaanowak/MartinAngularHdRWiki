@@ -29,6 +29,28 @@
   .characters-container {
     width: 65%; /* Der Charakterbereich nimmt 65% der Gesamtbreite ein */
     margin-left: 20px; /* Abstand zwischen den Bereichen */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .characters-container button {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.6rem 1.2rem;
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1b3d26, #c8a400);
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(200, 164, 0, 0.5);
   }
   
   /* Die Liste der A-Z Filter Checkboxen */
@@ -54,6 +76,7 @@
   button {
     display: block;
     margin: 10px 0; /* Optional: Fügt etwas Abstand zwischen den Buttons hinzu */
+    font-size: 15px;
   }
 
   button:hover {
@@ -61,3 +84,74 @@
     color: #fff; /* Neue Textfarbe */
     cursor: pointer; /* Zeigt einen Zeiger-Cursor an */
   }
+
+.characters-container button:hover {
+  background: linear-gradient(135deg, #c8a400, #1b3d26);
+  color: white;
+  box-shadow: 0 6px 12px rgba(27, 61, 38, 0.7);
+}
+
+.characters-container button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #c8a400;
+}
+
+  .center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button{
+  background-color: #1b3d26;
+  color: #c8a400;
+  font-size: 20px;
+}
+
+#alphabet-filters {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#alphabet-filters li {
+  /* Kleinere Kacheln für Buchstaben */
+}
+
+#alphabet-filters input[type="checkbox"] {
+  /* Unsichtbar machen, wir stylen das Label */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#alphabet-filters label {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#alphabet-filters input[type="checkbox"]:checked + label {
+  background: linear-gradient(135deg, #1b3d26, #c8a400);
+  color: white;
+  box-shadow: 0 4px 10px rgba(28, 62, 38, 0.7);
+}
+
+#alphabet-filters label:hover {
+  background-color: #d7d7d7;
+}
+
+#alphabet-filters label:active {
+  background-color: #bbb;
+}

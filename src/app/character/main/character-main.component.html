@@ -1,1 +1,17 @@
-<p>character-main works!</p>
+<div class="popup-overlay" (click)="onOverlayClick()">
+  <div class="popup-content" (click)="onContentClick($event)">
+    <h2>{{character.name}}</h2>
+    @if(character.birth){<p>Geboren: {{character.birth}}</p>}
+    @if(character.death){<p>Gestorben: {{character.death}}</p>}
+    @if(character.gender){<p>Geschlecht: {{character.gender}}</p>}
+    @if(character.hair){<p>Haare: {{character.hair}}</p>}
+    @if(character.height){<p>Größe: {{character.height}}</p>}
+    @if(character.race){<p>Rasse: {{character.race}}</p>}
+    @if(character.spouse){<p>Partner: {{character.spouse}}</p>}
+    <a href={{character.wikiUrl}}>Get More Information</a>
+    <p></p>
+    
+    <!-- Mehr Daten anzeigen, z.B. Geburtsjahr, Haus, etc. -->
+    <button (click)="close.emit()">Schließen</button>
+  </div>
+</div>

@@ -1,1 +1,21 @@
-<p>search works!</p>
+<div class="popup-overlay" (click)="onOverlayClick()">
+  <div class="popup-content" (click)="stopPropagation($event)">
+    <h2>Charakter suchen</h2>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Mind. 3 Buchstaben..." />
+
+@if (searchQuery.length < 3) {
+  <p>Bitte mindestens 3 Buchstaben eingeben.</p>
+} @else {
+  <ul>
+    <li *ngFor="let char of filteredCharacters" (click)="selectCharacter(char)">
+      {{ char.name }}
+    </li>
+    @if (filteredCharacters.length === 0) {
+      <li>Keine Treffer gefunden.</li>
+    }
+  </ul>
+}
+
+    <button (click)="close.emit()">Schließen</button>
+  </div>
+</div>

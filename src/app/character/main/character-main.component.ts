@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Character } from '../../character.model';
+
 
 @Component({
   selector: 'app-character-main',
@@ -8,15 +9,16 @@ import { Router } from '@angular/router';
   styleUrl: './character-main.component.css'
 })
 export class CharacterMainComponent {
-    character: any;
+  @Input() character!: Character;
+  @Output() close = new EventEmitter<void>();
 
-    constructor(private router: Router){};
 
-    ngOnInit(): void {
-      // Abrufen des gesamten Character-Objekts aus dem Router State
-      const navigation = this.router.getCurrentNavigation();
-      if (navigation?.extras.state) {
-        this.character = navigation.extras.state['character'];
-      }
-    }
+  onOverlayClick() {
+    this.close.emit();
+  }
+
+  onContentClick(event: MouseEvent) {
+    event.stopPropagation(); // verhindert Schließen beim Klick auf das Popup selbst
+  }
+    
 }
