@@ -51,6 +51,7 @@
     cursor: pointer;
     transition: background 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(200, 164, 0, 0.5);
+    font-family: 'Uncial Antiqua', serif;
   }
   
   /* Die Liste der A-Z Filter Checkboxen */
@@ -100,10 +101,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Uncial Antiqua', serif;
 }
 
 .search-button{
   background-color: #1b3d26;
+  font-family: 'Uncial Antiqua', serif;
   color: #c8a400;
   font-size: 20px;
 }
@@ -154,4 +157,7 @@
 
 #alphabet-filters label:active {
   background-color: #bbb;
+}
+div{
+  font-family: 'Uncial Antiqua', serif;
 }
